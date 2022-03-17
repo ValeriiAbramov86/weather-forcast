@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SearchCityComponent } from './pages/search-city/search-city.component';
+
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule)
+    component: SearchCityComponent
   },
   {
     path: '**',
@@ -14,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class MainRoutingModule { }
